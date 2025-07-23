@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { Digilib } from './services/digilib';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,12 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('eLibraryAJS');
+  digilibService = inject(Digilib);
+
+  isUserLoggedIn = () => this.digilibService.isUserLoggedIn();
+
+  LogOut() {
+    this.digilibService.logOut();
+    window.location.reload();
+  }
 }

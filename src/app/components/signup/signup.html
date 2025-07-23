@@ -1,0 +1,32 @@
+<form #signupForm="ngForm" class="container mt-4 p-4 rounded shadow bg-white" style="max-width: 500px;" (ngSubmit)="onSubmit(signupForm)">
+    <h3 class="mb-4 text-center">Sign Up</h3>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" ngModel required class="form-control" placeholder="Enter your name">
+        <div *ngIf="signupForm.submitted && !signupForm.controls['name']?.valid" class="text-danger small">
+            Name is required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" ngModel required class="form-control" placeholder="Enter your email">
+        <div *ngIf="signupForm.submitted && !signupForm.controls['email']?.valid" class="text-danger small">
+            Valid email is required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" ngModel required class="form-control" placeholder="Enter your password">
+        <div *ngIf="signupForm.submitted && !signupForm.controls['password']?.valid" class="text-danger small">
+            Password is required.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" id="age" name="age" ngModel required min="1" class="form-control" placeholder="Enter your age">
+        <div *ngIf="signupForm.submitted && !signupForm.controls['age']?.valid" class="text-danger small">
+            Age must be at least 1.
+        </div>
+    </div>
+    <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary w-100">Sign Up</button>
+</form>
