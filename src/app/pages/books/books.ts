@@ -12,7 +12,7 @@ export class Books implements OnInit {
 
   books: any[] = [];
   
-  bookService = inject(Book);
+  constructor(private bookService: Book) {}
 
   ngOnInit() {
     this.bookService.getBooks().subscribe(data => {
