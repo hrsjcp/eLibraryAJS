@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Digilib } from '../../services/digilib';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { PAGE_URLS } from '../../structure/prototype';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class Navbar {
 
-  digilibService = inject(Digilib);
+  PAGE_URLS = PAGE_URLS;
+
+  constructor(private digilibService: Digilib) {}
 
   isUserLoggedIn = () => this.digilibService.isUserLoggedIn();
 

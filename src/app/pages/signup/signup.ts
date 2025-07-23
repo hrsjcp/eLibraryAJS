@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../services/user';
+import { Navbar } from "../../components/navbar/navbar";
 
 @Component({
   selector: 'app-signup',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, Navbar],
   templateUrl: './signup.html',
   styleUrl: './signup.scss'
 })

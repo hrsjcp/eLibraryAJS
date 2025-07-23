@@ -6,12 +6,16 @@ import { Injectable } from '@angular/core';
 export class Digilib {
 
   isUserLoggedIn(): boolean {
-    const token = localStorage.getItem('token');
-    return !!token;
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return !!localStorage.getItem('token');
+    }
+    return false;
   }
 
   logOut(): void {
-    localStorage.removeItem('token');
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.removeItem('token')
+    }
   }
   
 }
