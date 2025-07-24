@@ -1,5 +1,7 @@
 <app-navbar></app-navbar>
 
+
+{{loginForm.value | json}}
 <form #loginForm="ngForm" class="container mt-4 p-4 rounded shadow bg-white" style="max-width: 500px;" (ngSubmit)="onSubmit(loginForm)">
     <h3 class="mb-4 text-center">Login</h3>
     <div class="mb-3">

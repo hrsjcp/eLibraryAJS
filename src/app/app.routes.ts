@@ -5,7 +5,7 @@ import { Offers } from './pages/offers/offers';
 import { Login } from './pages/login/login';
 import { Signup } from './pages/signup/signup';
 import { NotFound } from './components/not-found/not-found';
-import { Home } from './pages/home/home';
+import { Home } from './pages/project_pages/home/home';
 import { accessGuard } from './guards/access-guard';
 
 export const routes: Routes = [
