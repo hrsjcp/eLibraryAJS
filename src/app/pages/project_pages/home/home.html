@@ -3,11 +3,11 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3" style="background-color: rgb(234, 234, 234);">
-                Sidebar content here
+        <div class="col-md-2 p-0" style="background-color: rgb(234, 234, 234);">
+            <app-sidebar></app-sidebar>
         </div>
-        <div class="col-md-9" style="background-color: rgb(227, 113, 113);">
-                Main Content here
+        <div class="col-md-10 rounded shadow bg-white p-2">
+                <router-outlet></router-outlet>
         </div>
     </div>
 </div>

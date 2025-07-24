@@ -9,7 +9,9 @@ import { Home } from './pages/project_pages/home/home';
 import { accessGuard } from './guards/access-guard';
 
 export const routes: Routes = [
-    { path: "digilib", component: Home, pathMatch: "full", canActivate: [accessGuard] },
+    { path: "digilib", component: Home, canActivate: [accessGuard], children: [
+        { path: "books", component: Books, pathMatch: "full" },
+    ]},
     { path: "signup", component: Signup, pathMatch: "full" },
     { path: "login", component: Login, pathMatch: "full" },
     { path: "", component: Main, pathMatch: "full" },
