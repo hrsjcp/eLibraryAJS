@@ -12,5 +12,9 @@ export class Book {
   public getBooks(): Observable<any> {
     return this.http.get<any>('http://localhost:1234/api/books/all');
   }
+
+  public getBookById(bookId: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:1234/api/books/get-book-by-id/${bookId}`);
+  }
   
 }
